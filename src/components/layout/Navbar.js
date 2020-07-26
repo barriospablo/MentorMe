@@ -10,7 +10,6 @@ const Navbar = () => {
         Pablinho
       </Link>
       <button
-        onClick={this.handleOnPress}
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"

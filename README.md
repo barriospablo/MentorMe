@@ -2,8 +2,8 @@ developed by Pablinho
 
 ## Mentor Me
 
-In the project directory, you can run:
+With this app you can do ...
 
-### `Coming soon`
+### Coming soon
 
 More features...

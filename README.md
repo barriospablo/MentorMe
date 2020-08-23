@@ -11,5 +11,18 @@ Currently the app allow us to add, edit or delete mentors, we can also see a lis
 
 ### Installation and Setup
 
-Installation:
+Install node modules:
+
 `npm install`
+
+Install the firebase npm package:
+
+`npm install firebase`
+
+To Start Server:
+
+`npm start`
+
+To Visit App:
+
+`localhost:3000/`

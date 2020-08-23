@@ -12,4 +12,4 @@ Currently the app allow us to add, edit or delete mentors, we can also see a lis
 ### Installation and Setup
 
 Installation:
-npm install
+`npm install`

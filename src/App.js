@@ -7,6 +7,7 @@ import MentorDetails from "./components/mentors/MentorDetails";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import CreateMentor from "./components/mentors/CreateMentor";
+import EditMentor from "./components/mentors/EditMentor";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/mentor/:id" component={MentorDetails} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/edit/:mentor" component={EditMentor} />
           <Route path="/create" component={CreateMentor} />
         </Switch>
       </div>

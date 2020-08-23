@@ -1,11 +1,12 @@
 import React from "react";
 import MentorsList from "../mentors/MentorsList";
 
-const Dashboard = (props) => {
-  const { mentors } = props;
+const Dashboard = () => {
   return (
-    <div className=" container">
-      <MentorsList mentors={mentors} />
+    <div className="container">
+      <div className="justify-content-center">
+        <MentorsList />
+      </div>
     </div>
   );
 };

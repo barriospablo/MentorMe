@@ -1,23 +1,30 @@
 import React, { useState } from "react";
+import { db } from "../../firebase";
 
 const CreateMentor = () => {
   const initialState = {
     title: "",
     content: "",
   };
+
+  const addMentor = async (mentorObject) => {
+    await db.collection("mentors").doc().set(mentorObject);
+    window.alert("Mentor added");
+    setValues({ ...initialState });
+  };
   const [values, setValues] = useState(initialState);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
-  const handleSubmit = (e) => {
+  const AddOrEdditMentor = async (e) => {
     e.preventDefault();
-    console.log(values);
+    addMentor(values);
   };
 
   return (
     <div className="form">
-      <form className="card card-body" onSubmit={handleSubmit}>
+      <form className="card card-body" onSubmit={AddOrEdditMentor}>
         <h5 className="">Create a new Mentor</h5>
         <div className="form-group input-group">
           <div className="input-group-text bg-light">
@@ -30,6 +37,7 @@ const CreateMentor = () => {
             className="form-control"
             id="title"
             onChange={handleChange}
+            value={values.title}
           />
         </div>
         <div className="form-group input-group">
@@ -39,6 +47,7 @@ const CreateMentor = () => {
             id="content"
             className="form-control"
             onChange={handleChange}
+            value={values.content}
           ></textarea>
         </div>
         <div>

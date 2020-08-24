@@ -20,13 +20,20 @@ const EditMentor = (props) => {
     setSelectedMentor({ ...selectedMentor, [name]: value });
   };
 
+  /**
+   * @name setForm
+   * @description set form inputs with mentor data
+   */
+
   const setForm = async () => {
     const doc = await db.collection("mentors").doc(mentor).get();
     setSelectedMentor({ ...doc.data() });
   };
-  useEffect(() => {
-    setForm();
-  }, []);
+  /**
+   * @name setMentor
+   * @param {Object} selectedMentor
+   * @description method in charge of update a mentor
+   */
   const setMentor = async (selectedMentor) => {
     await db.collection("mentors").doc(mentor).update(selectedMentor);
   };
@@ -34,6 +41,9 @@ const EditMentor = (props) => {
     e.preventDefault();
     setMentor(selectedMentor);
   };
+  useEffect(() => {
+    setForm();
+  }, []);
 
   return (
     <div className="form">

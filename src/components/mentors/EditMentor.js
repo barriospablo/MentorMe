@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../../firebase";
-
+/**
+ * @name EditMentor
+ * @param {Object} props
+ * @description component responsible for edit a given mentor
+ */
 const EditMentor = (props) => {
   const [selectedMentor, setSelectedMentor] = useState({});
   const { mentor } = props.match.params;
+
+  /**
+   * @name handleInputChange
+   * @param {*} e
+   * @description method in charge of set selectedMentor with inputs values
+   */
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

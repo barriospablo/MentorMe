@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
-// import MentorsSummary from "./MentorsSummary";
 
 import { db } from "../../firebase";
 import { Link } from "react-router-dom";
 
+/**
+ * @name MentorList
+ * @author pablo.barrios
+ *  @description component responsible for rendering a list of mentors
+ */
+
 const MentorList = () => {
   const [mentors, setMentors] = useState([]);
+  /**
+   * @name getLinks
+   *  @description function in charge of get and set an array of mentors from firebase
+   *
+   */
   const getLinks = async () => {
     await db.collection("mentors").onSnapshot((querySnapshot) => {
       const docs = [];
@@ -15,6 +25,11 @@ const MentorList = () => {
       setMentors(docs);
     });
   };
+  /**
+   * @name onDeleteLink
+   *  @description method responsible for delete an specific mentor given an id
+   * @param {string} id
+   */
   const onDeleteLink = async (id) => {
     if (window.confirm("Are you sure?")) {
       await db.collection("mentors").doc(id).delete();

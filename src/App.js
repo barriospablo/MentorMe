@@ -21,13 +21,6 @@ function App() {
           <Route path="/mentor/:id" component={MentorDetails} />
           <Route path="/edit/:mentor" component={EditMentor} />
           <Route path="/create" component={CreateMentor} />
-
-          {/* <Route path="/" component={SignIn} />
-          <Route exact path="/home" component={Dashboard} />
-          <Route path="/mentor/:id" component={MentorDetails} />
-          <Route path="/edit/:mentor" component={EditMentor} />
-          <Route path="/create" component={CreateMentor} />
-          <Route path="/algo" component={Algo} /> */}
         </Switch>
       </div>
     </BrowserRouter>

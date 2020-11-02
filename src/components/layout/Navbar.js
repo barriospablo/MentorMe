@@ -22,7 +22,6 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <div className="row">
           <SignedIn />
-          {/* <SignedOut /> */}
         </div>
       </div>
     </nav>

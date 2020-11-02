@@ -4,19 +4,6 @@ import { useFirebaseApp, useUser } from "reactfire";
 import { Link, Redirect } from "react-router-dom";
 
 const SignIn = () => {
-  // const initialState = {
-  //   email: "",
-  //   password: "",
-  // };
-  // const [values, setValues] = useState(initialState);
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setValues({ ...values, [name]: value });
-  // };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(values);
-  // };
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const firebase = useFirebaseApp();

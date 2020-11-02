@@ -7,8 +7,10 @@ import { db } from "../../firebase";
  */
 const CreateMentor = () => {
   const initialState = {
-    title: "",
+    firstName: "",
+    lastName: "",
     content: "",
+    seniority: "",
   };
   const [values, setValues] = useState(initialState);
 
@@ -49,14 +51,43 @@ const CreateMentor = () => {
               <i className="material-icons">person</i>
             </div>
             <input
-              placeholder="Name"
-              name="title"
+              placeholder="First Name"
+              name="firstName"
               type="text"
               className="form-control"
-              id="title"
+              id="firstName"
               onChange={handleChange}
-              value={values.title}
+              value={values.firstName}
             />
+          </div>
+          <div className="form-group input-group">
+            <div className="input-group-text bg-light">
+              <i className="material-icons">person</i>
+            </div>
+            <input
+              placeholder="Last Name"
+              name="lastName"
+              type="text"
+              className="form-control"
+              id="lastName"
+              onChange={handleChange}
+              value={values.lastName}
+            />
+          </div>
+          <div className="form-group">
+            <h4 htmlFor="exampleFormControlSelect1">Seniority</h4>
+            <select
+              className="form-control"
+              name="seniority"
+              onChange={handleChange}
+              id="exampleFormControlSelect1"
+            >
+              <option>Jr</option>
+              <option>Jr Adv</option>
+              <option>Ssr</option>
+              <option>Ssr Adv</option>
+              <option>Sr</option>
+            </select>
           </div>
           <div className="form-group input-group">
             <textarea

@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SignedIn from "./SignedIn";
-import SignedOut from "./SignedOut";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
+      <Link className="navbar-brand" to="">
         Pablinho
       </Link>
       <button
@@ -23,7 +22,7 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <div className="row">
           <SignedIn />
-          <SignedOut />
+          {/* <SignedOut /> */}
         </div>
       </div>
     </nav>

@@ -5,9 +5,9 @@ import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/dashboard/Dashboard";
 import MentorDetails from "./components/mentors/MentorDetails";
 import SignIn from "./components/auth/SignIn";
-import SignUp from "./components/auth/SignUp";
 import CreateMentor from "./components/mentors/CreateMentor";
 import EditMentor from "./components/mentors/EditMentor";
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
@@ -15,12 +15,19 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/signIn" component={SignIn} />
+          <Route exact path="/home" component={Dashboard} />
           <Route path="/mentor/:id" component={MentorDetails} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/signup" component={SignUp} />
           <Route path="/edit/:mentor" component={EditMentor} />
           <Route path="/create" component={CreateMentor} />
+
+          {/* <Route path="/" component={SignIn} />
+          <Route exact path="/home" component={Dashboard} />
+          <Route path="/mentor/:id" component={MentorDetails} />
+          <Route path="/edit/:mentor" component={EditMentor} />
+          <Route path="/create" component={CreateMentor} />
+          <Route path="/algo" component={Algo} /> */}
         </Switch>
       </div>
     </BrowserRouter>

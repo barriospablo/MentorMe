@@ -8,6 +8,7 @@ import { db } from "../../firebase";
 const EditMentor = (props) => {
   const [selectedMentor, setSelectedMentor] = useState({});
   const { mentor } = props.match.params;
+  console.log(mentor, "hello");
 
   /**
    * @name handleInputChange
@@ -54,13 +55,27 @@ const EditMentor = (props) => {
             <i className="material-icons">person</i>
           </div>
           <input
-            placeholder="Name"
-            name="title"
+            placeholder="First Name"
+            name="firstName"
             type="text"
             className="form-control"
             id="title"
             onChange={handleInputChange}
-            value={selectedMentor.title}
+            value={selectedMentor.firstName}
+          />
+        </div>
+        <div className="form-group input-group">
+          <div className="input-group-text bg-light">
+            <i className="material-icons">person</i>
+          </div>
+          <input
+            placeholder="Last Name"
+            name="lastName"
+            type="text"
+            className="form-control"
+            id="lastName"
+            onChange={handleInputChange}
+            value={selectedMentor.lastName}
           />
         </div>
         <div className="form-group input-group">

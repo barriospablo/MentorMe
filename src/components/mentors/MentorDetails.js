@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { db } from "../../firebase";
 
 const MentorDetails = (props) => {
+  const [mentorDetails, setMentorDetail] = useState({});
   const id = props.match.params.id;
+
+  const setDetails = async () => {
+    const doc = await db.collection("mentors").doc(id).get();
+    setMentorDetail({ ...doc.data() });
+  };
+  useEffect(() => {
+    setDetails();
+  }, []);
   return (
-    <div className="container section mentor-details">
+    <div className="container mt-4  section mentor-details">
       <div className="card">
         <div className="card-content">
-          <h2 className="card-title">Mentor title - {id}</h2>
+          <h2 className="card-title">{mentorDetails.firstName}</h2>
           <div className="card-body">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et labore
-              quaerat quibusdam vel saepe, ab voluptate accusantium culpa nemo
-              fuga earum? Soluta amet nobis officia sed neque fuga aperiam quia?
-            </p>
+            <p>{mentorDetails.content}</p>
           </div>
         </div>
         <div className="card-footer">
-          <div>Posted by Pablinho</div>
+          <div>{mentorDetails.seniority}</div>
           <div>2nd September, 2am</div>
         </div>
       </div>

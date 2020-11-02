@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { db } from "../../firebase";
 import { Link } from "react-router-dom";
+import { useUser } from "reactfire";
 
 /**
  * @name MentorList
@@ -36,18 +37,25 @@ const MentorList = () => {
       console.log("Mentor Deleted");
     }
   };
+  const user = useUser();
 
   useEffect(() => {
-    getLinks();
+    if (user) {
+      getLinks();
+    }
   }, []);
   return (
     <div className="container">
       <div className="">
         {mentors.map((mentor) => (
-          <div className="card justify-content-md-center ">
-            <div className="card-body" key={mentor.id}>
+          <div className="card justify-content-md-center " key={mentor.id}>
+            <div className="card-body">
               <div className="card-header">
-                <h4>{mentor.title}</h4>
+                <h4>
+                  <Link to={{ pathname: `/mentor/${mentor.id}` }}>
+                    {mentor.firstName} {mentor.lastName}
+                  </Link>
+                </h4>
               </div>
               <p>{mentor.content}</p>
               <div className="">

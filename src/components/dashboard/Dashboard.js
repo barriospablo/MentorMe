@@ -1,6 +1,10 @@
 import React from "react";
 import MentorsList from "../mentors/MentorsList";
-
+/**
+ * @name Dashboard
+ * @description component tha display a list of mentors
+ * @author pablo.barrios
+ */
 const Dashboard = () => {
   return (
     <div className="container col-sm-4">

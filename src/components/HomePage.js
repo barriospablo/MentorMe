@@ -1,6 +1,10 @@
 import React from "react";
 import { useUser } from "reactfire";
-
+/**
+ * @name HomePage
+ * @description component in charge of display a welcome message
+ * @author pablo.barrios
+ */
 const HomePage = () => {
   const user = useUser();
 

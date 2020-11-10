@@ -2,6 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "firebase/auth";
 import { useFirebaseApp, useUser } from "reactfire";
+/**
+ * @name SignedInLinks
+ * @description this component display a list of links if user is logged else display another list
+ */
 const SignedInLinks = () => {
   const firebase = useFirebaseApp();
   const user = useUser();

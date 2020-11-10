@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { db } from "../../firebase";
+/**
+ * @name MentorDetails
+ * @description this component display a card with mentor details
+ * @param {String} props
+ * @author pablo.barrios
+ */
 
 const MentorDetails = (props) => {
   const [mentorDetails, setMentorDetail] = useState({});

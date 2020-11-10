@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SignedIn from "./SignedIn";
+/**
+ * @name Navbar
+ * @description component that display the available links
+ * @author pablo.barrios
+ */
 
 const Navbar = () => {
   return (
